@@ -1,0 +1,8 @@
+/.bundle/
+/vendor/bundle/
+/coverage/
+/.rspec_status
+*.gem
+Gemfile.lock
+/vendor/
+/coverage/

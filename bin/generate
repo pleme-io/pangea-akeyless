@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SPEC="${AKEYLESS_OPENAPI_SPEC:-$HOME/code/github/pleme-io/akeyless-go/api/openapi.yaml}"
+RESOURCES="${AKEYLESS_RESOURCES:-$HOME/code/github/pleme-io/akeyless-terraform-resources/resources}"
+PROVIDER="${AKEYLESS_PROVIDER:-$HOME/code/github/pleme-io/akeyless-terraform-resources/provider.toml}"
+IAC_FORGE="${IAC_FORGE:-iac-forge}"
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+
+echo "=> Generating pangea-akeyless from OpenAPI spec"
+echo "   Spec: $SPEC"
+echo "   Resources: $RESOURCES"
+echo "   Provider: $PROVIDER"
+
+# Generate to temp dir
+TMPDIR=$(mktemp -d)
+trap "rm -rf $TMPDIR" EXIT
+
+$IAC_FORGE generate --backend pangea \
+  --spec "$SPEC" \
+  --resources "$RESOURCES" \
+  --output "$TMPDIR" \
+  --provider "$PROVIDER"
+
+# Remove old generated resource directories (preserve akeyless_types.rb, version.rb, etc.)
+rm -rf "$REPO_ROOT"/lib/pangea/resources/akeyless_*/
+rm -rf "$REPO_ROOT"/spec/resources/
+
+# Copy generated files
+for dir in $(ls -1 "$TMPDIR/lib/pangea/resources/"); do
+  cp -R "$TMPDIR/lib/pangea/resources/$dir" "$REPO_ROOT/lib/pangea/resources/"
+done
+
+mkdir -p "$REPO_ROOT/spec/resources"
+cp "$TMPDIR"/spec/resources/*.rb "$REPO_ROOT/spec/resources/"
+
+# Overwrite the require file and aggregator
+cat "$TMPDIR/lib/pangea-akeyless.rb" > "$REPO_ROOT/lib/pangea-akeyless.rb"
+cat "$TMPDIR/lib/pangea/resources/akeyless.rb" > "$REPO_ROOT/lib/pangea/resources/akeyless.rb"
+
+resource_count=$(ls -1d "$REPO_ROOT"/lib/pangea/resources/akeyless_*/ 2>/dev/null | wc -l | tr -d ' ')
+file_count=$(ls -1 "$REPO_ROOT"/lib/pangea/resources/akeyless_*/*.rb 2>/dev/null | wc -l | tr -d ' ')
+spec_count=$(ls -1 "$REPO_ROOT"/spec/resources/*.rb 2>/dev/null | wc -l | tr -d ' ')
+
+echo "=> Done."
+echo "   Resources: $resource_count"
+echo "   Generated files: $file_count"
+echo "   Spec stubs: $spec_count"

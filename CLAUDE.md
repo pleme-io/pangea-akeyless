@@ -16,7 +16,7 @@ lib/
     types/akeyless_types.rb  # Provider-specific Dry::Types (manual)
     resources/
       akeyless.rb            # Aggregator module (generated)
-      akeyless_*/            # 119 resource directories (generated)
+      akeyless_*/            # 238 resource directories (generated)
         types.rb             # Dry::Struct attributes class
         resource.rb          # ResourceBuilder DSL
 spec/
@@ -58,7 +58,7 @@ Default paths:
 
 ## Resource count
 
-- **119 resources** (auth methods, dynamic secrets, rotated secrets, targets,
+- **238 resources** (auth methods, dynamic secrets, rotated secrets, targets,
   keys, certificates, gateway config, roles, event forwarders, misc)
 
 ## Dependencies

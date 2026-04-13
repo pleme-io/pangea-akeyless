@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_auth_method_ldap,
       attributes_class: Akeyless::Types::AuthMethodLdapAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:access_expires, :allowed_client_type, :audit_logs_claims, :bound_ips, :description, :expiration_event_in, :gen_key, :gw_bound_ips, :jwt_ttl, :product_type, :public_key_data, :unique_identifier],
-      map_bool: [:delete_protection, :force_sub_claims]
+      map_present: [:access_expires, :audit_logs_claims, :bound_ips, :delete_protection, :description, :expiration_event_in, :gen_key, :gw_bound_ips, :jwt_ttl, :product_type, :public_key_data, :unique_identifier],
+      map_bool: [:force_sub_claims]
   end
   module Akeyless
     include AkeylessAuthMethodLdap

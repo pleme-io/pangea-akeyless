@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_target_gitlab,
       attributes_class: Akeyless::Types::TargetGitlabAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:description, :gitlab_access_token, :gitlab_certificate, :gitlab_url, :key, :max_versions]
+      map_present: [:description, :gitlab_access_token, :gitlab_certificate, :gitlab_url, :key]
   end
   module Akeyless
     include AkeylessTargetGitlab

@@ -12,10 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_folder,
       attributes_class: Akeyless::Types::FolderAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:accessibility, :description, :tags, :type],
-      map_bool: [:delete_protection]
+      map_present: [:delete_protection, :description, :tags]
   end
   module Akeyless
     include AkeylessFolder

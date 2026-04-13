@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_pki_cert_issuer,
       attributes_class: Akeyless::Types::PkiCertIssuerAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name, :ttl],
-      map_present: [:allowed_domains, :allowed_extra_extensions, :allowed_ip_sans, :allowed_uri_sans, :ca_target, :country, :critical_key_usage, :description, :destination_path, :expiration_event_in, :gw_cluster_url, :key_usage, :locality, :max_path_len, :ocsp_ttl, :organizational_units, :organizations, :postal_code, :province, :scheduled_renew, :signer_key_name, :street_address, :tag],
-      map_bool: [:allow_any_name, :allow_copy_ext_from_csr, :allow_subdomains, :auto_renew, :client_flag, :code_signing_flag, :create_private_crl, :create_private_ocsp, :create_public_crl, :create_public_ocsp, :delete_protection, :disable_wildcards, :enable_acme, :is_ca, :not_enforce_hostnames, :not_require_cn, :protect_certificates, :server_flag]
+      map_present: [:allowed_domains, :allowed_extra_extensions, :allowed_ip_sans, :allowed_uri_sans, :ca_target, :country, :critical_key_usage, :description, :destination_path, :expiration_event_in, :gw_cluster_url, :key_usage, :locality, :organizational_units, :organizations, :postal_code, :province, :scheduled_renew, :signer_key_name, :street_address, :tags],
+      map_bool: [:allow_any_name, :allow_copy_ext_from_csr, :allow_subdomains, :auto_renew, :client_flag, :code_signing_flag, :create_private_crl, :create_public_crl, :delete_protection, :enable_acme, :is_ca, :not_enforce_hostnames, :not_require_cn, :protect_certificates, :server_flag]
   end
   module Akeyless
     include AkeylessPkiCertIssuer

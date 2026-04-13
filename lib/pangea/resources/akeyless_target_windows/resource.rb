@@ -12,10 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_target_windows,
       attributes_class: Akeyless::Types::TargetWindowsAttributes,
-      outputs: { id: :id, name: :name },
-      map: [:hostname, :name],
-      map_present: [:certificate, :connection_type, :description, :domain, :key, :max_versions, :parent_target_name, :port],
-      map_bool: [:use_tls]
+      outputs: { id: :id },
+      map: [:hostname, :name, :password, :username],
+      map_present: [:certificate, :description, :domain, :key, :port, :use_tls]
   end
   module Akeyless
     include AkeylessTargetWindows

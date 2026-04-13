@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_auth_method_oidc,
       attributes_class: Akeyless::Types::AuthMethodOidcAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name, :unique_identifier],
-      map_present: [:access_expires, :allowed_client_type, :allowed_redirect_uri, :audience, :audit_logs_claims, :bound_ips, :client_id, :client_secret, :description, :expiration_event_in, :gw_bound_ips, :issuer, :jwt_ttl, :product_type, :required_scopes, :required_scopes_prefix, :subclaims_delimiters],
-      map_bool: [:delete_protection, :force_sub_claims]
+      map_present: [:access_expires, :allowed_redirect_uri, :audit_logs_claims, :bound_ips, :client_id, :client_secret, :delete_protection, :issuer, :jwt_ttl, :required_scopes, :required_scopes_prefix],
+      map_bool: [:force_sub_claims]
   end
   module Akeyless
     include AkeylessAuthMethodOidc

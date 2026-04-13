@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_mongodb,
       attributes_class: Akeyless::Types::DynamicSecretMongodbAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:custom_username_template, :description, :item_custom_fields, :mongodb_atlas_api_private_key, :mongodb_atlas_api_public_key, :mongodb_atlas_project_id, :mongodb_custom_data, :mongodb_default_auth_db, :mongodb_host_port, :mongodb_name, :mongodb_password, :mongodb_roles, :mongodb_scopes, :mongodb_server_uri, :mongodb_uri_options, :mongodb_username, :password_length, :producer_encryption_key_name, :secure_access_delay, :tags, :target_name, :user_ttl],
-      map_bool: [:delete_protection]
+      map_present: [:custom_username_template, :encryption_key_name, :mongodb_atlas_api_private_key, :mongodb_atlas_api_public_key, :mongodb_atlas_project_id, :mongodb_default_auth_db, :mongodb_host_port, :mongodb_name, :mongodb_password, :mongodb_roles, :mongodb_server_uri, :mongodb_uri_options, :mongodb_username, :password_length, :secure_access_bastion_issuer, :secure_access_db_name, :secure_access_enable, :secure_access_host, :tags, :target_name, :user_ttl],
+      map_bool: [:secure_access_web]
   end
   module Akeyless
     include AkeylessDynamicSecretMongodb

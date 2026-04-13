@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_auth_method_saml,
       attributes_class: Akeyless::Types::AuthMethodSamlAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name, :unique_identifier],
-      map_present: [:access_expires, :allowed_client_type, :allowed_redirect_uri, :audit_logs_claims, :bound_ips, :description, :expiration_event_in, :gw_bound_ips, :idp_metadata_url, :idp_metadata_xml_data, :jwt_ttl, :product_type, :subclaims_delimiters],
-      map_bool: [:delete_protection, :force_sub_claims]
+      map_present: [:access_expires, :allowed_redirect_uri, :audit_logs_claims, :bound_ips, :delete_protection, :idp_metadata_url, :idp_metadata_xml_data, :jwt_ttl],
+      map_bool: [:force_sub_claims]
   end
   module Akeyless
     include AkeylessAuthMethodSaml

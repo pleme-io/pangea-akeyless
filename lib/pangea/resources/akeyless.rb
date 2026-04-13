@@ -4,73 +4,82 @@
 module Pangea
   module Resources
     module Akeyless
+      include AkeylessAssociateRoleAuthMethod
+      include AkeylessAuthMethod
       include AkeylessAuthMethodApiKey
       include AkeylessAuthMethodAwsIam
       include AkeylessAuthMethodAzureAd
       include AkeylessAuthMethodCert
-      include AkeylessAuthMethodEmail
       include AkeylessAuthMethodGcp
-      include AkeylessAuthMethodHuawei
       include AkeylessAuthMethodK8s
-      include AkeylessAuthMethodKerberos
       include AkeylessAuthMethodLdap
       include AkeylessAuthMethodOauth2
-      include AkeylessAuthMethodOci
       include AkeylessAuthMethodOidc
       include AkeylessAuthMethodSaml
       include AkeylessAuthMethodUniversalIdentity
+      include AkeylessCertificate
+      include AkeylessClassicKey
+      include AkeylessDfcKey
       include AkeylessDynamicSecretArtifactory
       include AkeylessDynamicSecretAws
       include AkeylessDynamicSecretAzure
       include AkeylessDynamicSecretCassandra
       include AkeylessDynamicSecretCustom
-      include AkeylessDynamicSecretDockerhub
       include AkeylessDynamicSecretEks
       include AkeylessDynamicSecretGcp
       include AkeylessDynamicSecretGithub
       include AkeylessDynamicSecretGitlab
       include AkeylessDynamicSecretGke
-      include AkeylessDynamicSecretGoogleWorkspace
-      include AkeylessDynamicSecretHanadb
       include AkeylessDynamicSecretK8s
-      include AkeylessDynamicSecretLdap
       include AkeylessDynamicSecretMongodb
       include AkeylessDynamicSecretMssql
       include AkeylessDynamicSecretMysql
-      include AkeylessDynamicSecretOpenai
       include AkeylessDynamicSecretOracle
-      include AkeylessDynamicSecretPing
       include AkeylessDynamicSecretPostgresql
-      include AkeylessDynamicSecretRabbitmq
       include AkeylessDynamicSecretRdp
-      include AkeylessDynamicSecretRedis
       include AkeylessDynamicSecretRedshift
-      include AkeylessDynamicSecretSnowflake
-      include AkeylessDynamicSecretVenafi
       include AkeylessEventForwarderEmail
-      include AkeylessEventForwarderServicenow
+      include AkeylessEventForwarderServiceNow
       include AkeylessEventForwarderSlack
-      include AkeylessEventForwarderTeams
       include AkeylessEventForwarderWebhook
-      include AkeylessGatewayAllowedAccess
-      include AkeylessGatewayK8sAuthConfig
-      include AkeylessGatewayMigration
-      include AkeylessClassicKey
-      include AkeylessDfcKey
-      include AkeylessAccountCustomField
-      include AkeylessCertificate
-      include AkeylessEsm
       include AkeylessFolder
-      include AkeylessGroup
-      include AkeylessKmipClient
-      include AkeylessKmipEnvironment
-      include AkeylessOidcApp
-      include AkeylessPolicy
-      include AkeylessTokenizer
-      include AkeylessUsc
+      include AkeylessGatewayAllowedAccess
+      include AkeylessGatewayCache
+      include AkeylessGatewayDefaults
+      include AkeylessGatewayLogForwardingAwsS3
+      include AkeylessGatewayLogForwardingAzureAnalytics
+      include AkeylessGatewayLogForwardingDatadog
+      include AkeylessGatewayLogForwardingElasticsearch
+      include AkeylessGatewayLogForwardingGoogleChronicle
+      include AkeylessGatewayLogForwardingLogstash
+      include AkeylessGatewayLogForwardingLogzIo
+      include AkeylessGatewayLogForwardingSplunk
+      include AkeylessGatewayLogForwardingStdout
+      include AkeylessGatewayLogForwardingSumologic
+      include AkeylessGatewayLogForwardingSyslog
+      include AkeylessGatewayRemoteAccess
+      include AkeylessGatewayRemoteAccessRdpRecording
+      include AkeylessK8sAuthConfig
+      include AkeylessPkiCertIssuer
+      include AkeylessProducerArtifactory
+      include AkeylessProducerAws
+      include AkeylessProducerAzure
+      include AkeylessProducerCassandra
+      include AkeylessProducerCustom
+      include AkeylessProducerEks
+      include AkeylessProducerGcp
+      include AkeylessProducerGithub
+      include AkeylessProducerGke
+      include AkeylessProducerK8s
+      include AkeylessProducerMongo
+      include AkeylessProducerMssql
+      include AkeylessProducerMysql
+      include AkeylessProducerOracle
+      include AkeylessProducerPostgres
+      include AkeylessProducerRdp
+      include AkeylessProducerRedshift
       include AkeylessRole
-      include AkeylessRoleAuthMethodAssoc
-      include AkeylessRoleRule
+      include AkeylessRotatedSecret
       include AkeylessRotatedSecretAws
       include AkeylessRotatedSecretAzure
       include AkeylessRotatedSecretCassandra
@@ -82,47 +91,37 @@ module Pangea
       include AkeylessRotatedSecretMongodb
       include AkeylessRotatedSecretMssql
       include AkeylessRotatedSecretMysql
-      include AkeylessRotatedSecretOpenai
-      include AkeylessRotatedSecretOracledb
+      include AkeylessRotatedSecretOracle
       include AkeylessRotatedSecretPostgresql
       include AkeylessRotatedSecretRedis
       include AkeylessRotatedSecretRedshift
       include AkeylessRotatedSecretSnowflake
-      include AkeylessRotatedSecretSplunk
       include AkeylessRotatedSecretSsh
+      include AkeylessRotatedSecretSync
       include AkeylessRotatedSecretWindows
-      include AkeylessPkiCertIssuer
       include AkeylessSshCertIssuer
       include AkeylessStaticSecret
+      include AkeylessStaticSecretSync
       include AkeylessTargetArtifactory
       include AkeylessTargetAws
       include AkeylessTargetAzure
       include AkeylessTargetDb
-      include AkeylessTargetDockerhub
       include AkeylessTargetEks
       include AkeylessTargetGcp
-      include AkeylessTargetGemini
       include AkeylessTargetGithub
       include AkeylessTargetGitlab
       include AkeylessTargetGke
       include AkeylessTargetGlobalsign
-      include AkeylessTargetGlobalsignAtlas
-      include AkeylessTargetGodaddy
-      include AkeylessTargetHashiVault
       include AkeylessTargetK8s
-      include AkeylessTargetLdap
-      include AkeylessTargetLetsEncrypt
       include AkeylessTargetLinked
-      include AkeylessTargetOpenai
-      include AkeylessTargetPing
-      include AkeylessTargetRabbitmq
-      include AkeylessTargetSalesforce
-      include AkeylessTargetSectigo
-      include AkeylessTargetSplunk
+      include AkeylessTargetRabbit
       include AkeylessTargetSsh
       include AkeylessTargetWeb
       include AkeylessTargetWindows
       include AkeylessTargetZerossl
+      include AkeylessTokenizer
+      include AkeylessUsc
+      include AkeylessUscSecret
     end
   end
 end

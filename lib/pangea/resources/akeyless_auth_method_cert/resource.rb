@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_auth_method_cert,
       attributes_class: Akeyless::Types::AuthMethodCertAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name, :unique_identifier],
-      map_present: [:access_expires, :allowed_client_type, :allowed_cors, :audit_logs_claims, :bound_common_names, :bound_dns_sans, :bound_email_sans, :bound_extensions, :bound_ips, :bound_organizational_units, :bound_uri_sans, :certificate_data, :description, :expiration_event_in, :gw_bound_ips, :jwt_ttl, :product_type, :revoked_cert_ids],
-      map_bool: [:delete_protection, :force_sub_claims, :require_crl_dp]
+      map_present: [:access_expires, :audit_logs_claims, :bound_common_names, :bound_dns_sans, :bound_email_sans, :bound_extensions, :bound_ips, :bound_organizational_units, :bound_uri_sans, :certificate_data, :delete_protection, :gw_bound_ips, :jwt_ttl, :revoked_cert_ids],
+      map_bool: [:force_sub_claims]
   end
   module Akeyless
     include AkeylessAuthMethodCert

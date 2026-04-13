@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_target_globalsign,
       attributes_class: Akeyless::Types::TargetGlobalsignAttributes,
-      outputs: { id: :id, name: :name },
-      map: [:contact_email, :contact_first_name, :contact_last_name, :contact_phone, :name, :profile_id],
-      map_present: [:description, :key, :max_versions, :timeout]
+      outputs: { id: :id },
+      map: [:contact_email, :contact_first_name, :contact_last_name, :contact_phone, :name, :password, :profile_id, :username],
+      map_present: [:description, :key, :timeout]
   end
   module Akeyless
     include AkeylessTargetGlobalsign

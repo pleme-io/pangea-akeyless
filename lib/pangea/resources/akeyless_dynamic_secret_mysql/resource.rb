@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_mysql,
       attributes_class: Akeyless::Types::DynamicSecretMysqlAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:custom_username_template, :db_server_certificates, :db_server_name, :description, :item_custom_fields, :mysql_dbname, :mysql_host, :mysql_password, :mysql_port, :mysql_revocation_statements, :mysql_screation_statements, :mysql_username, :password_length, :producer_encryption_key_name, :secure_access_delay, :ssl_certificate, :tags, :target_name, :user_ttl],
-      map_bool: [:delete_protection, :ssl]
+      map_present: [:custom_username_template, :db_server_certificates, :db_server_name, :encryption_key_name, :mysql_creation_statements, :mysql_dbname, :mysql_host, :mysql_password, :mysql_port, :mysql_revocation_statements, :mysql_username, :password_length, :secure_access_bastion_issuer, :secure_access_db_name, :secure_access_enable, :secure_access_host, :ssl_certificate, :tags, :target_name, :user_ttl],
+      map_bool: [:secure_access_web, :ssl]
   end
   module Akeyless
     include AkeylessDynamicSecretMysql

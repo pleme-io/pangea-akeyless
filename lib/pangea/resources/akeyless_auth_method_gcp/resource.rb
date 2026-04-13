@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_auth_method_gcp,
       attributes_class: Akeyless::Types::AuthMethodGcpAttributes,
-      outputs: { id: :id, name: :name },
-      map: [:audience, :name, :type],
-      map_present: [:access_expires, :allowed_client_type, :audit_logs_claims, :bound_ips, :bound_labels, :bound_projects, :bound_regions, :bound_service_accounts, :bound_zones, :description, :expiration_event_in, :gw_bound_ips, :jwt_ttl, :product_type, :service_account_creds_data, :unique_identifier],
-      map_bool: [:delete_protection, :force_sub_claims]
+      outputs: { id: :id },
+      map: [:name, :type],
+      map_present: [:access_expires, :audience, :audit_logs_claims, :bound_ips, :bound_labels, :bound_projects, :bound_regions, :bound_service_accounts, :bound_zones, :delete_protection, :jwt_ttl, :service_account_creds_data],
+      map_bool: [:force_sub_claims]
   end
   module Akeyless
     include AkeylessAuthMethodGcp

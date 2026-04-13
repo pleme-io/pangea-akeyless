@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_rdp,
       attributes_class: Akeyless::Types::DynamicSecretRdpAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:allow_user_extend_session, :custom_username_template, :description, :fixed_user_claim_keyname, :fixed_user_only, :item_custom_fields, :password_length, :producer_encryption_key_name, :rdp_admin_name, :rdp_admin_pwd, :rdp_host_name, :rdp_host_port, :rdp_user_groups, :secure_access_delay, :secure_access_rd_gateway_server, :tags, :target_name, :user_ttl, :warn_user_before_expiration],
-      map_bool: [:delete_protection]
+      map_present: [:custom_username_template, :encryption_key_name, :fixed_user_only, :password_length, :rdp_admin_name, :rdp_admin_pwd, :rdp_host_name, :rdp_host_port, :rdp_user_groups, :secure_access_enable, :secure_access_host, :secure_access_rdp_domain, :secure_access_rdp_user, :tags, :target_name, :user_ttl],
+      map_bool: [:secure_access_allow_external_user, :secure_access_web]
   end
   module Akeyless
     include AkeylessDynamicSecretRdp

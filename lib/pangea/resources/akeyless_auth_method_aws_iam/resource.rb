@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_auth_method_aws_iam,
       attributes_class: Akeyless::Types::AuthMethodAwsIamAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:bound_aws_account_id, :name],
-      map_present: [:access_expires, :allowed_client_type, :audit_logs_claims, :bound_arn, :bound_ips, :bound_resource_id, :bound_role_id, :bound_role_name, :bound_user_id, :bound_user_name, :description, :expiration_event_in, :gw_bound_ips, :jwt_ttl, :product_type, :sts_url, :unique_identifier],
-      map_bool: [:delete_protection, :force_sub_claims]
+      map_present: [:access_expires, :audit_logs_claims, :bound_arn, :bound_ips, :bound_resource_id, :bound_role_id, :bound_role_name, :bound_user_id, :bound_user_name, :delete_protection, :jwt_ttl, :sts_url],
+      map_bool: [:force_sub_claims]
   end
   module Akeyless
     include AkeylessAuthMethodAwsIam

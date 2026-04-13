@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_classic_key,
       attributes_class: Akeyless::Types::ClassicKeyAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:alg, :name],
-      map_present: [:auto_rotate, :cert_file_data, :certificate_common_name, :certificate_country, :certificate_digest_algo, :certificate_format, :certificate_locality, :certificate_organization, :certificate_province, :certificate_ttl, :description, :expiration_event_in, :gpg_alg, :hash_algorithm, :item_custom_fields, :key_data, :protection_key_name, :rotation_event_in, :rotation_interval, :tags],
-      map_bool: [:delete_protection, :generate_self_signed_certificate]
+      map_present: [:auto_rotate, :cert_file_data, :certificate_common_name, :certificate_country, :certificate_format, :certificate_locality, :certificate_organization, :certificate_province, :certificate_ttl, :conf_file_data, :delete_protection, :description, :expiration_event_in, :gpg_alg, :key_data, :protection_key_name, :rotation_event_in, :rotation_interval, :tags],
+      map_bool: [:generate_self_signed_certificate]
   end
   module Akeyless
     include AkeylessClassicKey

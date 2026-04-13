@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_target_aws,
       attributes_class: Akeyless::Types::TargetAwsAttributes,
-      outputs: { id: :id, name: :name },
-      map: [:access_key, :access_key_id, :name],
-      map_present: [:description, :key, :max_versions, :region, :role_arn, :session_token],
-      map_bool: [:generate_external_id, :use_gw_cloud_identity]
+      outputs: { id: :id },
+      map: [:access_key_id, :name],
+      map_present: [:access_key, :description, :key, :region, :session_token],
+      map_bool: [:use_gw_cloud_identity]
   end
   module Akeyless
     include AkeylessTargetAws

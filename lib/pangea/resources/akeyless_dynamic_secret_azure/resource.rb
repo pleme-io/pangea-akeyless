@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_azure,
       attributes_class: Akeyless::Types::DynamicSecretAzureAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:app_obj_id, :azure_administrative_unit, :azure_client_id, :azure_client_secret, :azure_tenant_id, :custom_username_template, :description, :fixed_user_claim_keyname, :item_custom_fields, :password_length, :producer_encryption_key_name, :tags, :target_name, :user_group_obj_id, :user_principal_name, :user_role_template_id, :user_ttl],
-      map_bool: [:delete_protection, :fixed_user_only, :user_portal_access, :user_programmatic_access]
+      map_present: [:app_obj_id, :azure_client_id, :azure_client_secret, :azure_tenant_id, :custom_username_template, :encryption_key_name, :password_length, :secure_access_enable, :secure_access_url, :tags, :target_name, :user_group_obj_id, :user_principal_name, :user_role_template_id, :user_ttl],
+      map_bool: [:secure_access_web, :secure_access_web_browsing, :user_portal_access, :user_programmatic_access]
   end
   module Akeyless
     include AkeylessDynamicSecretAzure

@@ -12,10 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_rotated_secret_ldap,
       attributes_class: Akeyless::Types::RotatedSecretLdapAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name, :rotator_type, :target_name],
-      map_present: [:ProviderType, :authentication_credentials, :auto_rotate, :description, :host_provider, :key, :max_versions, :password_length, :rotate_after_disconnect, :rotated_password, :rotated_username, :rotation_event_in, :rotation_hour, :rotation_interval, :tags, :target, :user_attribute, :user_dn],
-      map_bool: [:delete_protection]
+      map_present: [:authentication_credentials, :auto_rotate, :description, :key, :password_length, :rotated_password, :rotated_username, :rotation_hour, :rotation_interval, :tags, :user_attribute, :user_dn]
   end
   module Akeyless
     include AkeylessRotatedSecretLdap

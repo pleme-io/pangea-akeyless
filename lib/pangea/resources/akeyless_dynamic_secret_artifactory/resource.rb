@@ -12,10 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_artifactory,
       attributes_class: Akeyless::Types::DynamicSecretArtifactoryAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:artifactory_token_audience, :artifactory_token_scope, :name],
-      map_present: [:artifactory_admin_name, :artifactory_admin_pwd, :base_url, :custom_username_template, :description, :item_custom_fields, :producer_encryption_key_name, :tags, :target_name, :user_ttl],
-      map_bool: [:delete_protection]
+      map_present: [:artifactory_admin_name, :artifactory_admin_pwd, :base_url, :custom_username_template, :encryption_key_name, :tags, :target_name, :user_ttl]
   end
   module Akeyless
     include AkeylessDynamicSecretArtifactory

@@ -1,0 +1,8 @@
+name: akeyless_target_windows
+title: Manages a akeyless_target_windows resource
+version: 0.1.0
+supports:
+  - platform: akeyless
+depends:
+  - name: inspec-akeyless
+    url: https://github.com/pleme-io/inspec-akeyless

@@ -1,0 +1,8 @@
+name: akeyless_dynamic_secret_gitlab
+title: Manages a akeyless_dynamic_secret_gitlab resource
+version: 0.1.0
+supports:
+  - platform: akeyless
+depends:
+  - name: inspec-akeyless
+    url: https://github.com/pleme-io/inspec-akeyless

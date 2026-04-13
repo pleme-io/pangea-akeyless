@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_auth_method_azure_ad,
       attributes_class: Akeyless::Types::AuthMethodAzureAdAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:bound_tenant_id, :name],
-      map_present: [:access_expires, :allowed_client_type, :audience, :audit_logs_claims, :bound_group_id, :bound_ips, :bound_providers, :bound_resource_id, :bound_resource_names, :bound_resource_types, :bound_rg_id, :bound_spid, :bound_sub_id, :description, :expiration_event_in, :gw_bound_ips, :issuer, :jwks_uri, :jwt_ttl, :product_type, :unique_identifier],
-      map_bool: [:delete_protection, :force_sub_claims]
+      map_present: [:access_expires, :audience, :audit_logs_claims, :bound_group_id, :bound_ips, :bound_providers, :bound_resource_id, :bound_resource_names, :bound_resource_types, :bound_rg_id, :bound_spid, :bound_sub_id, :delete_protection, :issuer, :jwks_uri, :jwt_ttl],
+      map_bool: [:force_sub_claims]
   end
   module Akeyless
     include AkeylessAuthMethodAzureAd

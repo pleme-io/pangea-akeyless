@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_target_github,
       attributes_class: Akeyless::Types::TargetGithubAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:description, :github_app_id, :github_app_private_key, :github_base_url, :key, :max_versions]
+      map_present: [:description, :github_app_id, :github_app_private_key, :github_base_url, :key]
   end
   module Akeyless
     include AkeylessTargetGithub

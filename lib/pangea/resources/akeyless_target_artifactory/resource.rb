@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_target_artifactory,
       attributes_class: Akeyless::Types::TargetArtifactoryAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:artifactory_admin_name, :artifactory_admin_pwd, :base_url, :name],
-      map_present: [:description, :key, :max_versions]
+      map_present: [:description, :key]
   end
   module Akeyless
     include AkeylessTargetArtifactory

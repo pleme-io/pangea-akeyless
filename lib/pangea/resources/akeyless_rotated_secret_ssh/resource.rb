@@ -12,10 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_rotated_secret_ssh,
       attributes_class: Akeyless::Types::RotatedSecretSshAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name, :rotator_type, :target_name],
-      map_present: [:authentication_credentials, :auto_rotate, :description, :key, :key_data_base64, :max_versions, :password_length, :public_key_remote_path, :rotate_after_disconnect, :rotated_password, :rotated_username, :rotation_event_in, :rotation_hour, :rotation_interval, :rotator_custom_cmd, :same_password, :secure_access_target_type, :tags],
-      map_bool: [:delete_protection]
+      map_present: [:authentication_credentials, :auto_rotate, :description, :key, :password_length, :rotated_password, :rotated_username, :rotation_hour, :rotation_interval, :rotator_custom_cmd, :tags]
   end
   module Akeyless
     include AkeylessRotatedSecretSsh

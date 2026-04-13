@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_target_zerossl,
       attributes_class: Akeyless::Types::TargetZerosslAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:api_key, :imap_fqdn, :imap_password, :imap_username, :name],
-      map_present: [:description, :imap_port, :imap_target_email, :key, :max_versions, :timeout]
+      map_present: [:description, :imap_port, :imap_target_email, :key, :timeout]
   end
   module Akeyless
     include AkeylessTargetZerossl

@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_tokenizer,
       attributes_class: Akeyless::Types::TokenizerAttributes,
-      outputs: { id: :id, name: :name },
-      map: [:name, :template_type, :tokenizer_type],
-      map_present: [:alphabet, :decoding_template, :delete_protection, :description, :encoding_template, :encryption_key_name, :item_custom_fields, :pattern, :tag, :tweak_type]
+      outputs: { id: :id },
+      map: [:name, :template_type],
+      map_present: [:alphabet, :decoding_template, :delete_protection, :description, :encoding_template, :encryption_key_name, :pattern, :tag, :tokenizer_type, :tweak_type]
   end
   module Akeyless
     include AkeylessTokenizer

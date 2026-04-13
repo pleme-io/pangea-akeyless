@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_dfc_key,
       attributes_class: Akeyless::Types::DfcKeyAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:alg, :name],
-      map_present: [:auto_rotate, :certificate_common_name, :certificate_country, :certificate_digest_algo, :certificate_format, :certificate_locality, :certificate_organization, :certificate_province, :certificate_ttl, :customer_frg_id, :description, :expiration_event_in, :hash_algorithm, :item_custom_fields, :rotation_event_in, :rotation_interval, :split_level, :tag],
+      map_present: [:auto_rotate, :cert_data_base64, :certificate_common_name, :certificate_country, :certificate_format, :certificate_locality, :certificate_organization, :certificate_province, :certificate_ttl, :conf_file_data, :customer_frg_id, :description, :expiration_event_in, :rotation_event_in, :rotation_interval, :split_level, :tags],
       map_bool: [:delete_protection, :generate_self_signed_certificate]
   end
   module Akeyless

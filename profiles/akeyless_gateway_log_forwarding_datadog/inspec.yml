@@ -1,0 +1,8 @@
+name: akeyless_gateway_log_forwarding_datadog
+title: Manages a akeyless_gateway_log_forwarding_datadog resource
+version: 0.1.0
+supports:
+  - platform: akeyless
+depends:
+  - name: inspec-akeyless
+    url: https://github.com/pleme-io/inspec-akeyless

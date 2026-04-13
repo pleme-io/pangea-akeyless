@@ -12,10 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_gateway_allowed_access,
       attributes_class: Akeyless::Types::GatewayAllowedAccessAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:access_id, :name],
-      map_present: [:case_sensitive, :description, :permissions, :sub_claims],
-      map_bool: [:SubClaimsCaseInsensitive]
+      map_present: [:description, :permissions, :sub_claims]
   end
   module Akeyless
     include AkeylessGatewayAllowedAccess

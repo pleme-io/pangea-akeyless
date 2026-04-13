@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_target_eks,
       attributes_class: Akeyless::Types::TargetEksAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:eks_access_key_id, :eks_cluster_ca_cert, :eks_cluster_endpoint, :eks_cluster_name, :eks_secret_access_key, :name],
-      map_present: [:description, :eks_region, :key, :max_versions],
+      map_present: [:description, :eks_region, :key],
       map_bool: [:use_gw_cloud_identity]
   end
   module Akeyless

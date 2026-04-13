@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_target_ssh,
       attributes_class: Akeyless::Types::TargetSshAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:description, :host, :key, :max_versions, :port, :private_key, :private_key_password, :ssh_password, :ssh_username]
+      map_present: [:description, :host, :key, :port, :private_key, :private_key_password, :ssh_password, :ssh_username]
   end
   module Akeyless
     include AkeylessTargetSsh

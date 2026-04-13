@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_target_web,
       attributes_class: Akeyless::Types::TargetWebAttributes,
-      outputs: { id: :id, name: :name },
-      map: [:name],
-      map_present: [:description, :key, :max_versions, :url]
+      outputs: { id: :id },
+      map: [:name, :url],
+      map_present: [:description, :key]
   end
   module Akeyless
     include AkeylessTargetWeb

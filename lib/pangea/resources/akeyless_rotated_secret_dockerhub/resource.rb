@@ -12,10 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_rotated_secret_dockerhub,
       attributes_class: Akeyless::Types::RotatedSecretDockerhubAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name, :target_name],
-      map_present: [:authentication_credentials, :auto_rotate, :description, :key, :max_versions, :password_length, :rotation_event_in, :rotation_hour, :rotation_interval, :tags],
-      map_bool: [:delete_protection]
+      map_present: [:authentication_credentials, :auto_rotate, :description, :key, :password_length, :rotation_hour, :rotation_interval, :tags]
   end
   module Akeyless
     include AkeylessRotatedSecretDockerhub

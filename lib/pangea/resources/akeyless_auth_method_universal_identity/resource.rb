@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_auth_method_universal_identity,
       attributes_class: Akeyless::Types::AuthMethodUniversalIdentityAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:access_expires, :allowed_client_type, :audit_logs_claims, :bound_ips, :description, :expiration_event_in, :gw_bound_ips, :jwt_ttl, :product_type, :ttl],
-      map_bool: [:delete_protection, :deny_inheritance, :deny_rotate, :force_sub_claims]
+      map_present: [:access_expires, :audit_logs_claims, :bound_ips, :delete_protection, :jwt_ttl, :ttl],
+      map_bool: [:deny_inheritance, :deny_rotate, :force_sub_claims]
   end
   module Akeyless
     include AkeylessAuthMethodUniversalIdentity

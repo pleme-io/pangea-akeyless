@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_custom,
       attributes_class: Akeyless::Types::DynamicSecretCustomAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:create_sync_url, :name, :revoke_sync_url],
-      map_present: [:admin_rotation_interval_days, :description, :item_custom_fields, :payload, :producer_encryption_key_name, :rotate_sync_url, :tags, :timeout_sec, :user_ttl],
-      map_bool: [:delete_protection, :enable_admin_rotation]
+      map_present: [:admin_rotation_interval_days, :encryption_key_name, :payload, :rotate_sync_url, :tags, :timeout_sec, :user_ttl],
+      map_bool: [:enable_admin_rotation]
   end
   module Akeyless
     include AkeylessDynamicSecretCustom

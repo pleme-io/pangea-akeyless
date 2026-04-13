@@ -12,10 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_oracle,
       attributes_class: Akeyless::Types::DynamicSecretOracleAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:custom_username_template, :db_server_certificates, :db_server_name, :description, :item_custom_fields, :oracle_host, :oracle_password, :oracle_port, :oracle_revocation_statements, :oracle_screation_statements, :oracle_service_name, :oracle_username, :password_length, :producer_encryption_key_name, :tags, :target_name, :user_ttl],
-      map_bool: [:delete_protection]
+      map_present: [:custom_username_template, :db_server_certificates, :db_server_name, :encryption_key_name, :oracle_creation_statements, :oracle_host, :oracle_password, :oracle_port, :oracle_revocation_statements, :oracle_service_name, :oracle_username, :password_length, :tags, :target_name, :user_ttl]
   end
   module Akeyless
     include AkeylessDynamicSecretOracle

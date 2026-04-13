@@ -12,10 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_rotated_secret_custom,
       attributes_class: Akeyless::Types::RotatedSecretCustomAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name, :target_name],
-      map_present: [:authentication_credentials, :auto_rotate, :custom_payload, :description, :enable_password_policy, :key, :max_versions, :password_length, :rotate_after_disconnect, :rotation_event_in, :rotation_hour, :rotation_interval, :tags, :timeout_sec, :use_capital_letters, :use_lower_letters, :use_numbers, :use_special_characters],
-      map_bool: [:delete_protection]
+      map_present: [:auto_rotate, :custom_payload, :description, :key, :password_length, :rotation_hour, :rotation_interval, :tags]
   end
   module Akeyless
     include AkeylessRotatedSecretCustom

@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_target_gcp,
       attributes_class: Akeyless::Types::TargetGcpAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:description, :gcp_key, :key, :max_versions],
+      map_present: [:description, :gcp_key, :gcp_sa_email, :key],
       map_bool: [:use_gw_cloud_identity]
   end
   module Akeyless

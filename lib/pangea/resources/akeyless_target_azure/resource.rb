@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_target_azure,
       attributes_class: Akeyless::Types::TargetAzureAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:azure_cloud, :client_id, :client_secret, :connection_type, :description, :key, :max_versions, :resource_group_name, :resource_name, :subscription_id, :tenant_id],
+      map_present: [:client_id, :client_secret, :description, :key, :tenant_id],
       map_bool: [:use_gw_cloud_identity]
   end
   module Akeyless

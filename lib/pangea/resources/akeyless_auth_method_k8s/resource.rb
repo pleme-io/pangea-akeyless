@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_auth_method_k8s,
       attributes_class: Akeyless::Types::AuthMethodK8sAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:access_expires, :allowed_client_type, :audience, :audit_logs_claims, :bound_ips, :bound_namespaces, :bound_pod_names, :bound_sa_names, :description, :expiration_event_in, :gen_key, :gw_bound_ips, :jwt_ttl, :product_type, :public_key],
-      map_bool: [:delete_protection, :force_sub_claims]
+      map_present: [:access_expires, :audience, :audit_logs_claims, :bound_ips, :bound_namespaces, :bound_pod_names, :bound_sa_names, :delete_protection, :gen_key, :jwt_ttl, :public_key],
+      map_bool: [:force_sub_claims]
   end
   module Akeyless
     include AkeylessAuthMethodK8s

@@ -12,10 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_rotated_secret_gcp,
       attributes_class: Akeyless::Types::RotatedSecretGcpAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name, :rotator_type, :target_name],
-      map_present: [:authentication_credentials, :auto_rotate, :description, :gcp_key, :gcp_service_account_email, :gcp_service_account_key_id, :grace_rotation, :grace_rotation_hour, :grace_rotation_interval, :grace_rotation_timing, :key, :max_versions, :password_length, :rotation_event_in, :rotation_hour, :rotation_interval, :tags],
-      map_bool: [:delete_protection]
+      map_present: [:authentication_credentials, :auto_rotate, :description, :gcp_key, :gcp_service_account_email, :gcp_service_account_key_id, :key, :password_length, :rotation_hour, :rotation_interval, :tags]
   end
   module Akeyless
     include AkeylessRotatedSecretGcp

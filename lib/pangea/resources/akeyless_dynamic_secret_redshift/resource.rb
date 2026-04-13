@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_redshift,
       attributes_class: Akeyless::Types::DynamicSecretRedshiftAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:creation_statements, :custom_username_template, :description, :item_custom_fields, :password_length, :producer_encryption_key, :redshift_db_name, :redshift_host, :redshift_password, :redshift_port, :redshift_username, :tags, :target_name, :user_ttl],
-      map_bool: [:delete_protection, :ssl]
+      map_present: [:creation_statements, :custom_username_template, :encryption_key_name, :password_length, :redshift_db_name, :redshift_host, :redshift_password, :redshift_port, :redshift_username, :secure_access_db_name, :secure_access_enable, :secure_access_host, :tags, :target_name, :user_ttl],
+      map_bool: [:secure_access_web, :ssl]
   end
   module Akeyless
     include AkeylessDynamicSecretRedshift

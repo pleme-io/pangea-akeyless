@@ -12,10 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_gitlab,
       attributes_class: Akeyless::Types::DynamicSecretGitlabAttributes,
-      outputs: { id: :id, name: :name },
-      map: [:gitlab_access_type, :gitlab_token_scopes, :name],
-      map_present: [:description, :gitlab_access_token, :gitlab_certificate, :gitlab_role, :gitlab_url, :group_name, :installation_organization, :item_custom_fields, :tags, :target_name, :ttl],
-      map_bool: [:delete_protection]
+      outputs: { id: :id },
+      map: [:name],
+      map_present: [:delete_protection, :description, :gitlab_access_token, :gitlab_access_type, :gitlab_certificate, :gitlab_role, :gitlab_token_scopes, :gitlab_url, :group_name, :installation_organization, :tags, :target_name, :ttl]
   end
   module Akeyless
     include AkeylessDynamicSecretGitlab

@@ -1,0 +1,8 @@
+name: akeyless_associate_role_auth_method
+title: Manages a akeyless_associate_role_auth_method resource
+version: 0.1.0
+supports:
+  - platform: akeyless
+depends:
+  - name: inspec-akeyless
+    url: https://github.com/pleme-io/inspec-akeyless

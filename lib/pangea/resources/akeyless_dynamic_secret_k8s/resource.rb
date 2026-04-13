@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_k8s,
       attributes_class: Akeyless::Types::DynamicSecretK8sAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:custom_username_template, :description, :item_custom_fields, :k8s_allowed_namespaces, :k8s_cluster_ca_cert, :k8s_cluster_endpoint, :k8s_cluster_name, :k8s_cluster_token, :k8s_namespace, :k8s_predefined_role_name, :k8s_predefined_role_type, :k8s_rolebinding_yaml_data, :k8s_rolebinding_yaml_def, :k8s_service_account, :k8s_service_account_type, :producer_encryption_key_name, :secure_access_cluster_endpoint, :secure_access_dashboard_url, :secure_access_delay, :tags, :target_name, :user_ttl],
-      map_bool: [:delete_protection, :secure_access_allow_port_forwading, :use_gw_service_account]
+      map_present: [:custom_username_template, :delete_protection, :encryption_key_name, :k8s_allowed_namespaces, :k8s_cluster_ca_cert, :k8s_cluster_endpoint, :k8s_cluster_token, :k8s_namespace, :k8s_predefined_role_name, :k8s_predefined_role_type, :k8s_service_account, :k8s_service_account_type, :secure_access_bastion_issuer, :secure_access_cluster_endpoint, :secure_access_dashboard_url, :secure_access_enable, :tags, :target_name, :user_ttl],
+      map_bool: [:secure_access_allow_port_forwading, :secure_access_web, :secure_access_web_browsing, :secure_access_web_proxy]
   end
   module Akeyless
     include AkeylessDynamicSecretK8s

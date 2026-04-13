@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_aws,
       attributes_class: Akeyless::Types::DynamicSecretAwsAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:access_mode, :admin_rotation_interval_days, :aws_access_key_id, :aws_access_secret_key, :aws_external_id, :aws_role_arns, :aws_user_groups, :aws_user_policies, :custom_username_template, :description, :item_custom_fields, :password_length, :producer_encryption_key_name, :region, :secure_access_delay, :session_tags, :tags, :target_name, :transitive_tag_keys, :user_ttl],
-      map_bool: [:aws_user_console_access, :aws_user_programmatic_access, :delete_protection, :enable_admin_rotation]
+      map_present: [:access_mode, :aws_access_key_id, :aws_access_secret_key, :aws_role_arns, :aws_user_groups, :aws_user_policies, :custom_username_template, :encryption_key_name, :password_length, :region, :secure_access_aws_account_id, :secure_access_aws_region, :secure_access_bastion_issuer, :secure_access_enable, :secure_access_url, :tags, :target_name, :user_ttl],
+      map_bool: [:aws_user_console_access, :aws_user_programmatic_access, :secure_access_aws_native_cli, :secure_access_web, :secure_access_web_browsing]
   end
   module Akeyless
     include AkeylessDynamicSecretAws

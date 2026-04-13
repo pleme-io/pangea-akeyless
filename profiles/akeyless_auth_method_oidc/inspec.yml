@@ -1,0 +1,8 @@
+name: akeyless_auth_method_oidc
+title: Manages a akeyless_auth_method_oidc resource
+version: 0.1.0
+supports:
+  - platform: akeyless
+depends:
+  - name: inspec-akeyless
+    url: https://github.com/pleme-io/inspec-akeyless

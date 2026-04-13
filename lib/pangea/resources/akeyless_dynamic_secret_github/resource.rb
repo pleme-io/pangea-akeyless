@@ -12,10 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_github,
       attributes_class: Akeyless::Types::DynamicSecretGithubAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:description, :github_app_id, :github_app_private_key, :github_base_url, :installation_id, :installation_organization, :installation_repository, :item_custom_fields, :tags, :target_name, :token_permissions, :token_repositories, :token_ttl],
-      map_bool: [:delete_protection]
+      map_present: [:github_app_id, :github_app_private_key, :github_base_url, :installation_id, :installation_organization, :installation_repository, :target_name, :token_permissions, :token_repositories, :token_ttl]
   end
   module Akeyless
     include AkeylessDynamicSecretGithub

@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_event_forwarder_email,
       attributes_class: Akeyless::Types::EventForwarderEmailAttributes,
-      outputs: { id: :id, name: :name },
-      map: [:gateways_event_source_locations, :name, :runner_type],
-      map_present: [:auth_methods_event_source_locations, :description, :email_to, :event_types, :every, :include_error, :items_event_source_locations, :key, :override_url, :targets_event_source_locations]
+      outputs: { id: :id },
+      map: [:name],
+      map_present: [:auth_methods_event_source_locations, :description, :email_to, :event_types, :every, :gateways_event_source_locations, :include_error, :items_event_source_locations, :key, :override_url, :runner_type, :targets_event_source_locations]
   end
   module Akeyless
     include AkeylessEventForwarderEmail

@@ -1,0 +1,8 @@
+name: akeyless_gateway_log_forwarding_aws_s3
+title: Manages a akeyless_gateway_log_forwarding_aws_s3 resource
+version: 0.1.0
+supports:
+  - platform: akeyless
+depends:
+  - name: inspec-akeyless
+    url: https://github.com/pleme-io/inspec-akeyless

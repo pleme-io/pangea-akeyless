@@ -12,10 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_target_k8s,
       attributes_class: Akeyless::Types::TargetK8sAttributes,
-      outputs: { id: :id, name: :name },
-      map: [:name],
-      map_present: [:description, :k8s_auth_type, :k8s_client_certificate, :k8s_client_key, :k8s_cluster_ca_cert, :k8s_cluster_endpoint, :k8s_cluster_name, :k8s_cluster_token, :key, :max_versions],
-      map_bool: [:use_gw_service_account]
+      outputs: { id: :id },
+      map: [:k8s_cluster_ca_cert, :k8s_cluster_endpoint, :k8s_cluster_token, :name],
+      map_present: [:description, :key]
   end
   module Akeyless
     include AkeylessTargetK8s

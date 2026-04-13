@@ -12,10 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_rotated_secret_azure,
       attributes_class: Akeyless::Types::RotatedSecretAzureAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name, :rotator_type, :target_name],
-      map_present: [:api_id, :api_key, :application_id, :authentication_credentials, :auto_rotate, :description, :explicitly_set_sa, :grace_rotation, :grace_rotation_hour, :grace_rotation_interval, :grace_rotation_timing, :key, :max_versions, :password_length, :resource_group_name, :resource_name, :rotate_after_disconnect, :rotation_event_in, :rotation_hour, :rotation_interval, :storage_account_key_name, :tags],
-      map_bool: [:delete_protection]
+      map_present: [:api_id, :api_key, :app_id, :authentication_credentials, :auto_rotate, :description, :key, :password_length, :rotation_hour, :rotation_interval, :storage_account_key_name, :tags, :username]
   end
   module Akeyless
     include AkeylessRotatedSecretAzure

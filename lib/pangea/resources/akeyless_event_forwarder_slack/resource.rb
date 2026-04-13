@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_event_forwarder_slack,
       attributes_class: Akeyless::Types::EventForwarderSlackAttributes,
-      outputs: { id: :id, name: :name },
-      map: [:gateways_event_source_locations, :name, :runner_type, :url],
-      map_present: [:auth_methods_event_source_locations, :description, :event_types, :every, :items_event_source_locations, :key, :targets_event_source_locations]
+      outputs: { id: :id },
+      map: [:name, :url],
+      map_present: [:auth_methods_event_source_locations, :description, :event_types, :every, :gateways_event_source_locations, :items_event_source_locations, :key, :runner_type, :targets_event_source_locations]
   end
   module Akeyless
     include AkeylessEventForwarderSlack

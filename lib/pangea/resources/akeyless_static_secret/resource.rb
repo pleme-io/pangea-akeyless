@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_static_secret,
       attributes_class: Akeyless::Types::StaticSecretAttributes,
-      outputs: { id: :id, name: :name },
-      map: [:name, :value],
-      map_present: [:accessibility, :description, :format, :max_versions, :protection_key, :tags, :type],
-      map_bool: [:delete_protection]
+      outputs: { id: :id },
+      map: [:path],
+      map_present: [:custom_field, :delete_protection, :description, :format, :ignore_cache, :inject_url, :keep_prev_version, :password, :protection_key, :secure_access_bastion_issuer, :secure_access_enable, :secure_access_host, :secure_access_ssh_creds, :secure_access_ssh_user, :secure_access_url, :tags, :type, :username, :value],
+      map_bool: [:multiline_value, :secure_access_web, :secure_access_web_browsing]
   end
   module Akeyless
     include AkeylessStaticSecret

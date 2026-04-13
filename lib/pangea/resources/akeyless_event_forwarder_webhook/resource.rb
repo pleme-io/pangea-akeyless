@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_event_forwarder_webhook,
       attributes_class: Akeyless::Types::EventForwarderWebhookAttributes,
-      outputs: { id: :id, name: :name },
-      map: [:gateways_event_source_locations, :name, :runner_type],
-      map_present: [:auth_methods_event_source_locations, :auth_token, :auth_type, :client_cert_data, :description, :event_types, :every, :items_event_source_locations, :key, :private_key_data, :server_certificates, :targets_event_source_locations, :url]
+      outputs: { id: :id },
+      map: [:name],
+      map_present: [:auth_methods_event_source_locations, :auth_token, :auth_type, :client_cert_data, :description, :event_types, :every, :gateways_event_source_locations, :items_event_source_locations, :key, :password, :private_key_data, :runner_type, :server_certificates, :targets_event_source_locations, :url, :username]
   end
   module Akeyless
     include AkeylessEventForwarderWebhook

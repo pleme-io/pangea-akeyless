@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_certificate,
       attributes_class: Akeyless::Types::CertificateAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:certificate_data, :delete_protection, :description, :expiration_event_in, :format, :item_custom_fields, :key, :key_data, :tags]
+      map_present: [:certificate_data, :delete_protection, :description, :expiration_event_in, :format, :key, :key_data, :tags]
   end
   module Akeyless
     include AkeylessCertificate

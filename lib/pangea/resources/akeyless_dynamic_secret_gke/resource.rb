@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_gke,
       attributes_class: Akeyless::Types::DynamicSecretGkeAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:description, :gke_account_key, :gke_cluster_cert, :gke_cluster_endpoint, :gke_cluster_name, :gke_service_account_email, :item_custom_fields, :producer_encryption_key_name, :secure_access_cluster_endpoint, :secure_access_delay, :tags, :target_name, :user_ttl],
-      map_bool: [:delete_protection, :secure_access_allow_port_forwading]
+      map_present: [:encryption_key_name, :gke_account_key, :gke_cluster_cert, :gke_cluster_endpoint, :gke_cluster_name, :gke_service_account_email, :secure_access_bastion_issuer, :secure_access_cluster_endpoint, :secure_access_enable, :tags, :target_name, :user_ttl],
+      map_bool: [:secure_access_allow_port_forwading, :secure_access_web]
   end
   module Akeyless
     include AkeylessDynamicSecretGke

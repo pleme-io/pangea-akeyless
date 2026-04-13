@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_auth_method_oauth2,
       attributes_class: Akeyless::Types::AuthMethodOauth2Attributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name, :unique_identifier],
-      map_present: [:access_expires, :allowed_client_type, :audience, :audit_logs_claims, :bound_client_ids, :bound_ips, :cert, :cert_file_data, :description, :expiration_event_in, :gateway_url, :gw_bound_ips, :issuer, :jwks_json_data, :jwks_uri, :jwt_ttl, :product_type, :subclaims_delimiters],
-      map_bool: [:delete_protection, :force_sub_claims]
+      map_present: [:access_expires, :audience, :audit_logs_claims, :bound_client_ids, :bound_ips, :delete_protection, :gateway_url, :issuer, :jwks_json_data, :jwks_uri, :jwt_ttl],
+      map_bool: [:force_sub_claims]
   end
   module Akeyless
     include AkeylessAuthMethodOauth2

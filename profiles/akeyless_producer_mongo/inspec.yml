@@ -1,0 +1,8 @@
+name: akeyless_producer_mongo
+title: Manages a akeyless_producer_mongo resource
+version: 0.1.0
+supports:
+  - platform: akeyless
+depends:
+  - name: inspec-akeyless
+    url: https://github.com/pleme-io/inspec-akeyless

@@ -12,7 +12,7 @@ module Pangea::Resources
 
     define_resource :akeyless_target_linked,
       attributes_class: Akeyless::Types::TargetLinkedAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
       map_present: [:description, :hosts, :parent_target_name, :type]
   end

@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_eks,
       attributes_class: Akeyless::Types::DynamicSecretEksAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:description, :eks_access_key_id, :eks_assume_role, :eks_cluster_ca_cert, :eks_cluster_endpoint, :eks_cluster_name, :eks_region, :eks_secret_access_key, :item_custom_fields, :producer_encryption_key_name, :secure_access_cluster_endpoint, :secure_access_delay, :tags, :target_name, :user_ttl],
-      map_bool: [:delete_protection, :secure_access_allow_port_forwading]
+      map_present: [:eks_access_key_id, :eks_assume_role, :eks_cluster_ca_cert, :eks_cluster_endpoint, :eks_cluster_name, :eks_region, :eks_secret_access_key, :encryption_key_name, :secure_access_bastion_issuer, :secure_access_cluster_endpoint, :secure_access_enable, :tags, :target_name, :user_ttl],
+      map_bool: [:secure_access_allow_port_forwading, :secure_access_web]
   end
   module Akeyless
     include AkeylessDynamicSecretEks

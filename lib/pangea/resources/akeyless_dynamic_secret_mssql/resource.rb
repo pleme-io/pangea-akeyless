@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_mssql,
       attributes_class: Akeyless::Types::DynamicSecretMssqlAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:custom_username_template, :description, :item_custom_fields, :mssql_allowed_db_names, :mssql_create_statements, :mssql_dbname, :mssql_host, :mssql_password, :mssql_port, :mssql_revocation_statements, :mssql_username, :password_length, :producer_encryption_key_name, :secure_access_delay, :tags, :target_name, :user_ttl],
-      map_bool: [:delete_protection]
+      map_present: [:custom_username_template, :encryption_key_name, :mssql_create_statements, :mssql_dbname, :mssql_host, :mssql_password, :mssql_port, :mssql_revocation_statements, :mssql_username, :password_length, :secure_access_bastion_issuer, :secure_access_db_name, :secure_access_db_schema, :secure_access_enable, :secure_access_host, :tags, :target_name, :user_ttl],
+      map_bool: [:secure_access_web]
   end
   module Akeyless
     include AkeylessDynamicSecretMssql

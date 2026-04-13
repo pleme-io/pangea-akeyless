@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_postgresql,
       attributes_class: Akeyless::Types::DynamicSecretPostgresqlAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:creation_statements, :custom_username_template, :description, :item_custom_fields, :password_length, :postgresql_db_name, :postgresql_host, :postgresql_password, :postgresql_port, :postgresql_username, :producer_encryption_key, :revocation_statement, :secure_access_delay, :tags, :target_name, :user_ttl],
-      map_bool: [:delete_protection, :ssl]
+      map_present: [:creation_statements, :custom_username_template, :encryption_key_name, :password_length, :postgresql_db_name, :postgresql_host, :postgresql_password, :postgresql_port, :postgresql_username, :revocation_statements, :secure_access_bastion_issuer, :secure_access_db_name, :secure_access_db_schema, :secure_access_enable, :secure_access_host, :tags, :target_name, :user_ttl],
+      map_bool: [:secure_access_web, :ssl]
   end
   module Akeyless
     include AkeylessDynamicSecretPostgresql

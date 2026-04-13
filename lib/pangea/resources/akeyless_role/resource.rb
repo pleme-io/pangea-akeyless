@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_role,
       attributes_class: Akeyless::Types::RoleAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:analytics_access, :audit_access, :comment, :delete_protection, :description, :event_center_access, :event_forwarders_access, :event_forwarders_name, :gw_analytics_access, :reverse_rbac_access, :sra_reports_access, :usage_reports_access]
+      map_present: [:analytics_access, :assoc_auth_method, :audit_access, :delete_protection, :description, :event_center_access, :event_forwarders_access, :gw_analytics_access, :rules, :sra_reports_access, :usage_reports_access]
   end
   module Akeyless
     include AkeylessRole

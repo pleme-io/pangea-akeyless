@@ -12,9 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_target_gke,
       attributes_class: Akeyless::Types::TargetGkeAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:description, :gke_account_key, :gke_cluster_cert, :gke_cluster_endpoint, :gke_cluster_name, :gke_service_account_email, :key, :max_versions],
+      map_present: [:description, :gke_account_key, :gke_cluster_cert, :gke_cluster_endpoint, :gke_cluster_name, :gke_service_account_email, :key],
       map_bool: [:use_gw_cloud_identity]
   end
   module Akeyless

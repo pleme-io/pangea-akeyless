@@ -12,10 +12,9 @@ module Pangea::Resources
 
     define_resource :akeyless_usc,
       attributes_class: Akeyless::Types::UscAttributes,
-      outputs: { id: :id, name: :name },
-      map: [:secret_name, :usc_name, :value],
-      map_present: [:description, :namespace, :object_type, :pfx_password, :region, :tags, :usc_encryption_key],
-      map_bool: [:binary_value]
+      outputs: { id: :id },
+      map: [:name, :target_to_associate],
+      map_present: [:azure_kv_name, :delete_protection, :description, :k8s_namespace, :tags]
   end
   module Akeyless
     include AkeylessUsc

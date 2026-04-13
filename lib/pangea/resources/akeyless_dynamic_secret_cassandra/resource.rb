@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_dynamic_secret_cassandra,
       attributes_class: Akeyless::Types::DynamicSecretCassandraAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:name],
-      map_present: [:cassandra_creation_statements, :cassandra_hosts, :cassandra_password, :cassandra_port, :cassandra_username, :custom_username_template, :description, :item_custom_fields, :password_length, :producer_encryption_key_name, :ssl_certificate, :tags, :target_name, :user_ttl],
-      map_bool: [:delete_protection, :ssl]
+      map_present: [:cassandra_creation_statements, :cassandra_hosts, :cassandra_password, :cassandra_port, :cassandra_username, :custom_username_template, :encryption_key_name, :password_length, :ssl_certificate, :tags, :target_name, :user_ttl],
+      map_bool: [:ssl]
   end
   module Akeyless
     include AkeylessDynamicSecretCassandra

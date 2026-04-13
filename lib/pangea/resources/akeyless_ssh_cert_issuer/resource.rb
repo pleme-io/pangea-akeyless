@@ -12,10 +12,10 @@ module Pangea::Resources
 
     define_resource :akeyless_ssh_cert_issuer,
       attributes_class: Akeyless::Types::SshCertIssuerAttributes,
-      outputs: { id: :id, name: :name },
+      outputs: { id: :id },
       map: [:allowed_users, :name, :signer_key_name, :ttl],
-      map_present: [:ProviderType, :description, :extensions, :external_username, :fixed_user_claim_keyname, :host_provider, :principals, :tag, :target],
-      map_bool: [:delete_protection, :secure_access_use_internal_ssh_access]
+      map_present: [:description, :extensions, :principals, :secure_access_bastion_api, :secure_access_bastion_ssh, :secure_access_enable, :secure_access_host, :secure_access_ssh_creds_user, :tags],
+      map_bool: [:delete_protection, :secure_access_use_internal_bastion]
   end
   module Akeyless
     include AkeylessSshCertIssuer
